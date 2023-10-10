@@ -121,7 +121,7 @@ module.exports.BlogPost = {
         */
 
 
-        
+
         const data = await req.getModelList(BlogPost, 'blogCategoryId')
 
         res.status(200).send({
@@ -137,13 +137,15 @@ module.exports.BlogPost = {
         const data = await BlogPost.find({ blogCategoryId: req.params.categoryId }).populate('blogCategoryId')
 
         res.status(200).send({
+
+
             error: false,
             count: data.length,
             result: data
         })
     },
 
-    // CRUD ->
+    // CRUD   ->
 
     create: async (req, res) => {
         
