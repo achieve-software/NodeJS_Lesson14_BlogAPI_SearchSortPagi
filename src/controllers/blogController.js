@@ -120,6 +120,8 @@ module.exports.BlogPost = {
         const data = await BlogPost.find(search).sort(sort).skip(skip).limit(limit).populate('blogCategoryId')
         */
 
+
+        
         const data = await req.getModelList(BlogPost, 'blogCategoryId')
 
         res.status(200).send({
